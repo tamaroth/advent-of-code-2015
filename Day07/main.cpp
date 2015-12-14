@@ -120,7 +120,7 @@ int computeKey(std::string key)
 	}
 	case INSTR::NOT:
 	{
-		uint16_t value = ~computeKey(paramA);
+		uint16_t value = static_cast<uint16_t>(~computeKey(paramA));
 		retVal = value;
 		break;
 	}
