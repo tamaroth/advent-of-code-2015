@@ -4,51 +4,42 @@
 /************************************************************************/
 
 #include <boost/algorithm/string.hpp>
-#include <algorithm>
 #include <iostream>
 #include <string>
+#include <regex>
 
 std::string input = "vzbxkghb";
 
-bool isPassOK(std::string passwd)
+bool isPassOK(std::string& passwd)
 {
+	std::regex myreg(R"((.)\1.*(.)\2)");
 	bool isOK = false;
 
-	if (std::find_if(passwd.begin(), passwd.end(), boost::is_any_of("iol")) != passwd.end())
+	// Password cannot contain letters 'i', 'o' or 'l'.
+	if (std::any_of(passwd.begin(), passwd.end(), boost::is_any_of("iol")))
 	{
 		return false;
 	}
 
-	int times = 0;
-	auto it = passwd.begin();
-	do
+	// Password must contain at least two non-overlapping pairs of letters.
+	if (!std::regex_search(passwd, myreg))
 	{
-		if ((it = std::adjacent_find(it, passwd.end())) == passwd.end())
-		{
-			break;
-		}
-		times++;
-		if (it == passwd.end() - 2)
-			break;
-		it += 2;
-	} while (it != passwd.end());
-	if (times < 2)
 		return false;
+	}
 
 	// Any idea how to make this better without all this cluster-fuck?
+	// Password must contain at least one trio consisting of three consecutive letters.
 	for (size_t i = 0; i < passwd.size() - 2; i++)
 	{
 		if (((passwd[i] + 1) == passwd[i + 1]) && ((passwd[i] + 2) == passwd[i + 2]))
 			isOK = true;
 	}
-
 	return isOK;
 }
 
-std::string generateNew(std::string oldPassword)
+std::string generateNew(std::string& oldPassword)
 {
 	std::string newPassword = oldPassword;
-
 	bool found = false;
 
 	while (!found)
@@ -70,16 +61,15 @@ std::string generateNew(std::string oldPassword)
 		if (isPassOK(newPassword))
 			found = true;
 	}
-	
 	return newPassword;
 }
 
-std::string partOne(std::string password)
+std::string partOne(std::string& password)
 {
 	return generateNew(password);
 }
 
-std::string partTwo(std::string password)
+std::string partTwo(std::string& password)
 {
 	return generateNew(password);
 }
