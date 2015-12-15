@@ -5,15 +5,12 @@
 
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/property_tree/ptree.hpp>
-#include <boost/lexical_cast.hpp>
 #include <iostream>
 #include <fstream>
 #include <string>
 
-using boost::property_tree::ptree;
-using boost::property_tree::read_json;
-using boost::lexical_cast;
-using boost::bad_lexical_cast;
+using namespace boost;
+using namespace property_tree;
 
 int countElements(const ptree& pt, const bool& filterRed = false)
 {
@@ -21,17 +18,12 @@ int countElements(const ptree& pt, const bool& filterRed = false)
 	for (const auto& v : pt)
 	{
 		local += countElements(v.second, filterRed);
-		try
+		int ret = v.second.get_value<int>(0);
+		local += ret;
+		if (ret == 0 && filterRed )
 		{
-			local += lexical_cast<int>(v.second.get_value<std::string>(""));
-		}
-		catch (const bad_lexical_cast&)
-		{
-			if (filterRed)
-			{
-				if ((v.first != "") && (v.second.get_value<std::string>("") == "red"))
-					return 0;
-			}
+			if ((v.first != "") && (v.second.get_value<std::string>("") == "red"))
+				return 0;
 		}
 	}
 	return local;
