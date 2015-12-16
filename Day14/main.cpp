@@ -96,13 +96,9 @@ int partTwo()
 			}
 		}
 	}
-
+	
 	Results res = flipMap(scoreboard);
-	for (const auto& ret : res)
-	{
-		return ret.first;
-	}
-	return 1;
+	return std::begin(res)->first;
 }
 
 int main()
