@@ -10,7 +10,10 @@
 #include <array>
 #include <chrono>
 #include <map>
+
 using Spoons = std::vector<std::vector<int>>;
+Spoons set;
+
 struct Characteristic {
 	int64_t Capacity;
 	int64_t Durability;
@@ -110,12 +113,11 @@ int64_t getCalorieCount(std::vector<int> spoons)
 	}
 	return cal;
 }
-Spoons main_set;
 
 int64_t partOne()
 {
 	std::vector<int64_t> scores;
-	for (auto& s : main_set)
+	for (auto& s : set)
 	{
 		int64_t scoree = score(s);
 		scores.push_back(scoree);
@@ -127,7 +129,7 @@ int64_t partOne()
 int64_t partTwo()
 {
 	std::vector<int64_t> scores;
-	for (auto& s : main_set)
+	for (auto& s : set)
 	{
 		int64_t scoree = score(s);
 		if (getCalorieCount(s) == 500)
@@ -139,7 +141,10 @@ int64_t partTwo()
 
 int main()
 {
-	main_set = generateSet();
+	std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
+	set = generateSet();
 	std::cout << partOne() << std::endl;
-	std::cout << partTwo();
+	std::cout << partTwo() << std::endl;
+	std::chrono::duration<double> time_span = std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::high_resolution_clock::now() - t1);
+	std::cout << "Time: " << time_span.count() << "s.";
 }
