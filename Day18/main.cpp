@@ -9,9 +9,6 @@
 #include <chrono>
 #include <string>
 #include <array>
-#include <map>
-
-//using Grid = std::map<int, std::map<int, char>>;
 
 template<int S>
 using Grid = std::array<std::array<char, S>, S>;
@@ -27,7 +24,6 @@ template<int S>
 int countNeighboursOn(Grid<S>& grid, int x, int y, bool partTwo = false)
 {
 	int lightsOn = 0;
-	// check all four corners
 	if (x == 0) // top row
 	{
 		if (y == 0) // top left
