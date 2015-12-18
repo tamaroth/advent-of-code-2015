@@ -6,7 +6,6 @@
 #include <algorithm>
 #include <iostream>
 #include <chrono>
-#include <list>
 #include <vector>
 
 using Set = std::vector<int>;
