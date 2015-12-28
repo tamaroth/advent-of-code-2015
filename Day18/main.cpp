@@ -95,7 +95,6 @@ int partTwo(Grid<S> grid)
 	}
 	lightCorners(grid);
 	return countLights(grid);
-	return 1;
 }
 
 template<int S>
