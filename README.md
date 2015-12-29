@@ -2,8 +2,8 @@
 Advent of Code sources
 
 | Day | Name                                                       |
-|:---:|:----------------------------------------------------------|
-| 01  | [Not Quite Lisp][./Day01/main.cpp]                         |
+|:---:|:-----------------------------------------------------------|
+| 01  | [Not Quite Lisp](./Day01/main.cpp)                         |
 | 02  | [I Was Told There Would Be No Math][./Day02/main.cpp]      |
 | 03  | [Perfectly Spherical Houses in a Vacuum][./Day03/main.cpp] |
 | 04  | [The Ideal Stocking Stuffer][./Day04/main.cpp]             |
