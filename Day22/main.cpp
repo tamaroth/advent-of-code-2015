@@ -75,7 +75,6 @@ private:
 	bool success(RESULT res) { return (res != RESULT::PLOST); };
 	bool won(RESULT res) { return (res == RESULT::PWON); };
 	bool lost(RESULT res) { return (res == RESULT::PLOST); };
-
 private:
 	std::array<Spell, 5> m_spells = { {
 		{SPELL::MMISSLE,   53, 4, 0, 0, 0, 0},
@@ -93,6 +92,7 @@ private:
 
 CGame::RESULT CGame::effects() 
 {
+	m_armour = 0;
 	for (auto& ev : m_gameState.effects)
 	{
 		if (ev.duration)
@@ -102,7 +102,7 @@ CGame::RESULT CGame::effects()
 			m_gameState.bossHP -= ev.damage;
 			m_gameState.mana += ev.mana;
 		}
-
+		
 		if (m_gameState.bossHP <= 0)
 			return RESULT::PWON;
 	}
@@ -148,13 +148,30 @@ CGame::RESULT CGame::turn(const Spell& spell)
 	if (m_gameState.hp <= 0)
 		return RESULT::PLOST;
 
-	if (won(effects()) || won(lastRes = castSpell(spell)) || won(effects()))
+	if (won(effects()))
 	{
 		m_lowestMana = std::min(m_lowestMana, m_gameState.spentMana);
 		return RESULT::PWON;
 	}
 
-	m_gameState.hp -= ((m_bossDamage - m_armour) <= 0) ? 1 : (m_bossDamage - m_armour);
+	if (won(lastRes = castSpell(spell)))
+	{
+		m_lowestMana = std::min(m_lowestMana, m_gameState.spentMana);
+		return RESULT::PWON;
+	}
+
+	if (lost(lastRes))
+	{
+		return RESULT::PLOST;
+	}
+
+	if (won(effects()))
+	{
+		m_lowestMana = std::min(m_lowestMana, m_gameState.spentMana);
+		return RESULT::PWON;
+	}
+
+	m_gameState.hp = m_gameState.hp - std::max((m_bossDamage - m_armour), 1);
 	if (m_gameState.hp <= 0 || m_gameState.mana <= 0 || lost(lastRes))
 	{
 		return RESULT::PLOST;
@@ -162,9 +179,12 @@ CGame::RESULT CGame::turn(const Spell& spell)
 
 	for (const auto& sp : m_spells)
 	{
-		State state = m_gameState;
-		lastRes = turn(sp);
-		m_gameState = state;
+		if (!sp.duration || sp.name != spell.name)
+		{
+			State state = m_gameState;
+			lastRes = turn(sp);
+			m_gameState = state;
+		}
 	}
 	return lastRes;
 }
@@ -173,7 +193,9 @@ int CGame::startGame()
 {
 	for (auto& spell : m_spells)
 	{
+		State state = m_gameState;
 		turn(spell);
+		m_gameState = state;
 	}
 	return 0;
 }
