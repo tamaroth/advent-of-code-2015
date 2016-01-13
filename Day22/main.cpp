@@ -148,27 +148,15 @@ CGame::RESULT CGame::turn(const Spell& spell)
 	if (m_gameState.hp <= 0)
 		return RESULT::PLOST;
 
-	if (won(effects()))
+	if (won(effects()) || won(lastRes = castSpell(spell)) || (!lost(lastRes) && won(effects())))
 	{
 		m_lowestMana = std::min(m_lowestMana, m_gameState.spentMana);
 		return RESULT::PWON;
 	}
-
-	if (won(lastRes = castSpell(spell)))
-	{
-		m_lowestMana = std::min(m_lowestMana, m_gameState.spentMana);
-		return RESULT::PWON;
-	}
-
+	
 	if (lost(lastRes))
 	{
-		return RESULT::PLOST;
-	}
-
-	if (won(effects()))
-	{
-		m_lowestMana = std::min(m_lowestMana, m_gameState.spentMana);
-		return RESULT::PWON;
+		return lastRes;
 	}
 
 	m_gameState.hp = m_gameState.hp - std::max((m_bossDamage - m_armour), 1);
