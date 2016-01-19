@@ -74,5 +74,5 @@ int main()
 	std::cout << "Part Two: " << p2_qe << std::endl;
 	std::chrono::duration<double> time_span = std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::high_resolution_clock::now() - t1);
 	std::cout << "Time: " << time_span.count() << "s.";
-	return 0;
+	return 1;
 }

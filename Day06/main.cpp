@@ -8,6 +8,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <chrono>
 #include <array>
 #include <tuple>
 
@@ -174,5 +175,9 @@ uint32_t partTwo()
 
 int main()
 {
-	std::cout << partOne() << std::endl << partTwo();
+	std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
+	std::cout << partOne() << std::endl;
+	std::cout << partTwo() << std::endl;
+	std::chrono::duration<double> time_span = std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::high_resolution_clock::now() - t1);
+	std::cout << "Time: " << time_span.count() << "s.";
 }

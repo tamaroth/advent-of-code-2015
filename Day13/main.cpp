@@ -6,6 +6,7 @@
 #include <boost/algorithm/string.hpp>
 #include <iostream>
 #include <fstream>
+#include <chrono>
 #include <string>
 #include <vector>
 #include <tuple>
@@ -82,7 +83,10 @@ int partTwo()
 
 int main()
 {
+	std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
 	readInputData();
-	cout << partOne() << endl;
-	cout << partTwo() << endl;
+	std::cout << partOne() << std::endl;
+	std::cout << partTwo() << std::endl;
+	std::chrono::duration<double> time_span = std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::high_resolution_clock::now() - t1);
+	std::cout << "Time: " << time_span.count() << "s.";
 }

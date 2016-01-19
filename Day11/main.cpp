@@ -6,6 +6,7 @@
 #include <boost/algorithm/string.hpp>
 #include <iostream>
 #include <string>
+#include <chrono>
 #include <regex>
 
 std::string input = "vzbxkghb";
@@ -76,7 +77,11 @@ std::string partTwo(std::string& password)
 
 int main()
 {
+	std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
 	std::string newPassword = partOne(input);
 	std::cout << "Part One: " << newPassword << std::endl;
 	std::cout << "Part Two: " << partTwo(newPassword) << std::endl;
+	std::chrono::duration<double> time_span = std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::high_resolution_clock::now() - t1);
+	std::cout << "Time: " << time_span.count() << "s.";
+
 }

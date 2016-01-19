@@ -2,7 +2,6 @@
 /* Advent of Code:
 /* Day 15: Science for Hungry People
 /************************************************************************/
-
 #include <algorithm>
 #include <functional>
 #include <iostream>

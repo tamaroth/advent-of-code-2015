@@ -1,15 +1,15 @@
 # AdventOfCode
 Advent of Code sources
 
-| Day | Name                                                       |
-|:---:|:-----------------------------------------------------------|
-| 01  | [Not Quite Lisp](./Day01/main.cpp)                         |
-| 02  | [I Was Told There Would Be No Math](./Day02/main.cpp)      |
-| 03  | [Perfectly Spherical Houses in a Vacuum](./Day03/main.cpp) |
-| 04  | [The Ideal Stocking Stuffer](./Day04/main.cpp)             |
-| 05  | [Doesn't He Have Intern-Elves For This?](./Day05/main.cpp) |
-| 06  | [Probably a Fire Hazard](./Day06/main.cpp)                 |
-| 07  | [Some Assembly Required](./Day07/main.cpp)                 |
+| Day | Name                                                       | Time       |
+|:---:|:-----------------------------------------------------------|------------|
+| 01  | [Not Quite Lisp](./Day01/main.cpp)                         | 0.0013305s |
+| 02  | [I Was Told There Would Be No Math](./Day02/main.cpp)      | 0.0055595s |
+| 03  | [Perfectly Spherical Houses in a Vacuum](./Day03/main.cpp) | 0.0028197s |
+| 04  | [The Ideal Stocking Stuffer](./Day04/main.cpp)             | 0.5100740s |
+| 05  | [Doesn't He Have Intern-Elves For This?](./Day05/main.cpp) | 0.0029789s |
+| 06  | [Probably a Fire Hazard](./Day06/main.cpp)                 | 0.0507391s |
+| 07  | [Some Assembly Required](./Day07/main.cpp)                 | 
 | 08  | [Matchsticks](./Day08/main.cpp)                            |
 | 09  | [All in a Single Night](./Day09/main.cpp)                  |
 | 10  | [Elves Look, Elves Say](./Day10/main.cpp)                  |
@@ -24,7 +24,7 @@ Advent of Code sources
 | 19  | [Medicine for Rudolph](./Day19/main.cpp)                   |
 | 20  | [Infinite Elves and Infinite Houses](./Day20/main.cpp)     |
 | 21  | [RPG Simulator 20XX](./Day21/main.cpp)                     |
-| 22  | Wizard Simulator 20XX                                      |
-| 23  | Opening the Turing Lock                                    |
-| 24  | It Hangs in the Balance                                    |
-| 25  | Let It Snow                                                |
+| 22  | Wizard Simulator 20XX(./Day22/main.cpp)                    |
+| 23  | Opening the Turing Lock(./Day23/main.cpp)                  |
+| 24  | It Hangs in the Balance(./Day24/main.cpp)                  |
+| 25  | Let It Snow(./Day21/main.cpp)                              |

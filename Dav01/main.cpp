@@ -4,8 +4,9 @@
 /************************************************************************/
 
 #include <iostream>
-#include <string>
 #include <fstream>
+#include <chrono>
+#include <string>
 
 int partOne(std::string input)
 {
@@ -51,12 +52,16 @@ int partTwo(std::string input)
 
 int main()
 {
+	std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
 	std::string input;
 	std::ifstream infile("data_d01.txt");
 	
 	while (std::getline(infile, input))
 	{
-		std::cout << partOne(input) << std::endl << partTwo(input);
+		std::cout << "Part One: " << partOne(input) << std::endl;
+		std::cout << "Part Two: " << partTwo(input) << std::endl;
 	}
+	std::chrono::duration<double> time_span = std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::high_resolution_clock::now() - t1);
+	std::cout << "Time: " << time_span.count() << "s.";
 	return 1;
 }
