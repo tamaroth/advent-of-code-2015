@@ -28,3 +28,4 @@ Advent of Code sources
 | 23  | [Opening the Turing Lock](./Day23/main.cpp)                |
 | 24  | [It Hangs in the Balance](./Day24/main.cpp)                |
 | 25  | [Let It Snow](./Day21/main.cpp)                            |
+
