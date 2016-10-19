@@ -1,20 +1,26 @@
-/************************************************************************/
-/* Advent of Code:
-/* Day 4: The Ideal Stocking Stuffer
-/************************************************************************/
+#include "day04.hpp"
 
-#include <iostream>
-#include <string>
-#include <chrono>
 
-extern "C" {
-	#include "md5.h"
+
+CDay04::CDay04()
+{
 }
 
-std::string input = "bgvyzdsv";
 
-uint64_t partOne()
+CDay04::~CDay04()
 {
+}
+
+void CDay04::init()
+{
+
+}
+
+std::string CDay04::part_one() const
+{
+	high_resolution_clock::time_point t1{ high_resolution_clock::now() };
+	std::string res{ "part one: " };
+
 	MD5_CTX ctx;
 	uint64_t salt = 0;
 	unsigned char md5[16];
@@ -22,7 +28,7 @@ uint64_t partOne()
 	do
 	{
 		unsigned int x1 = 0;
-		std::string src = input + std::to_string(salt);
+		std::string src = m_input + std::to_string(salt);
 		MD5Init(&ctx);
 		MD5Update(&ctx, reinterpret_cast<unsigned char *>(const_cast<char*>(src.c_str())), static_cast<uint32_t>(src.length()));
 		MD5Final(md5, &ctx);
@@ -34,11 +40,17 @@ uint64_t partOne()
 		}
 		salt++;
 	} while (salt != -1);
-	return salt;
+
+	std::chrono::duration<double> time_span = std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::high_resolution_clock::now() - t1);
+	res += std::to_string(salt) + " in " + std::to_string(time_span.count());
+	return res;
 }
 
-uint64_t partTwo()
+std::string CDay04::part_two() const
 {
+	high_resolution_clock::time_point t1{ high_resolution_clock::now() };
+	std::string res{ "part two: " };
+
 	MD5_CTX ctx;
 	uint64_t salt = 0;
 	unsigned char md5[16];
@@ -46,7 +58,7 @@ uint64_t partTwo()
 	do
 	{
 		unsigned int x1 = 0;
-		std::string src = input + std::to_string(salt);
+		std::string src = m_input + std::to_string(salt);
 		MD5Init(&ctx);
 		MD5Update(&ctx, reinterpret_cast<unsigned char *>(const_cast<char*>(src.c_str())), static_cast<uint32_t>(src.length()));
 		MD5Final(md5, &ctx);
@@ -58,14 +70,8 @@ uint64_t partTwo()
 		}
 		salt++;
 	} while (salt != -1);
-	return salt;
-}
 
-int main()
-{
-	std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
-	std::cout << partOne() << std::endl;
-	std::cout << partTwo() << std::endl;
 	std::chrono::duration<double> time_span = std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::high_resolution_clock::now() - t1);
-	std::cout << "Time: " << time_span.count() << "s.";
+	res += std::to_string(salt) + " in " + std::to_string(time_span.count());
+	return res;
 }

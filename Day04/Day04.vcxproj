@@ -133,10 +133,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="day04.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="md5c.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="day04.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="md5.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
