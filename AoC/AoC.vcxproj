@@ -137,6 +137,75 @@
     <ProjectReference Include="..\Day02\Day02.vcxproj">
       <Project>{fe81a7f2-eb9c-4722-8dde-2ad1b1787864}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\Day03\Day03.vcxproj">
+      <Project>{277ae2f3-224c-4458-b948-9bf3d0ae1c48}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Day04\Day04.vcxproj">
+      <Project>{db37df12-bb07-4507-84bf-2279f673fdf4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Day05\Day05.vcxproj">
+      <Project>{7465f9b6-d81b-42a5-9b8a-05263460df3e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Day06\Day06.vcxproj">
+      <Project>{5436dfd1-b363-4898-affc-14dcdaf67c06}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Day07\Day07.vcxproj">
+      <Project>{ce2abcfc-4d3a-4232-a210-8c7a0a6cdf4e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Day08\Day08.vcxproj">
+      <Project>{807bd146-3591-45c0-9488-b9fec0cab9dc}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Day09\Day09.vcxproj">
+      <Project>{54e20643-7d9c-42f3-a32c-06a65bde7f73}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Day10\Day10.vcxproj">
+      <Project>{637ad622-e982-419f-88b0-419c3a7a3927}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Day11\Day11.vcxproj">
+      <Project>{ec5ac6d3-399e-48b2-9cf0-d4369bc2a1cc}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Day12\Day12.vcxproj">
+      <Project>{38cb195e-5aad-44e3-a6a7-7b7825deaf0d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Day13\Day13.vcxproj">
+      <Project>{7003d95e-05cd-45d5-b59c-c8f6088ffaf6}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Day14\Day14.vcxproj">
+      <Project>{d7c95939-ef44-4098-b4ea-3816ee599b2b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Day15\Day15.vcxproj">
+      <Project>{57aa7c86-b4d3-4d0a-a8b0-a3b871233ca6}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Day16\Day16.vcxproj">
+      <Project>{ec43e835-7090-4f90-bb4d-ff3e37fe7ba7}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Day17\Day17.vcxproj">
+      <Project>{9b596ccd-a4bf-42cc-aa46-3ce7303749d4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Day18\Day18.vcxproj">
+      <Project>{9e7eea6c-9b65-4a6d-bc87-7b703dbdb9c9}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Day19\Day19.vcxproj">
+      <Project>{946ba7fa-67fa-4c20-99f6-95592de09513}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Day20\Day20.vcxproj">
+      <Project>{f260f534-9238-4d92-a79c-1edbc39901be}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Day21\Day21.vcxproj">
+      <Project>{0d4ca3d5-dcc6-4b32-a684-54f17f259385}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Day22\Day22.vcxproj">
+      <Project>{ecdd120c-4313-4242-a4a2-21e88f49eb01}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Day23\Day23.vcxproj">
+      <Project>{8cfdc021-4b06-4908-9849-b5fcdaacad78}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Day24\Day24.vcxproj">
+      <Project>{2638b323-78ce-4505-af89-c29b405a661b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Day25\Day25.vcxproj">
+      <Project>{675da56b-3012-4990-bfec-7b7ee9dfec97}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
