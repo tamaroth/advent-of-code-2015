@@ -60,6 +60,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AoC", "AoC\AoC.vcxproj", "{63FB68BA-0224-45C3-9D04-86ECBFA40A22}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Days", "Days", "{16D500E7-0A0F-451A-8FA8-66815301804A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -279,5 +281,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FE81A7F2-EB9C-4722-8DDE-2AD1B1787864} = {16D500E7-0A0F-451A-8FA8-66815301804A}
+		{B73CBB9F-8252-40C0-97CF-765D80B7EB01} = {16D500E7-0A0F-451A-8FA8-66815301804A}
 	EndGlobalSection
 EndGlobal

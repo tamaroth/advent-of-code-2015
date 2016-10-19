@@ -4,12 +4,15 @@
 #include <chrono>
 #include <string>
 #include <vector>
+#include <regex>
 #include <map>
 
+using std::chrono::high_resolution_clock;
 
 enum class IDENT
 {
 	DAY01,
+	DAY02,
 	ALLDAYS
 };
 
@@ -17,7 +20,7 @@ class CAoC
 {
 public:
 	CAoC() {};
-	virtual ~CAoC() {};
+	virtual ~CAoC() {}
 
 	virtual
 	void init() = 0;

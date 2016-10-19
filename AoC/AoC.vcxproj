@@ -134,6 +134,9 @@
     <ProjectReference Include="..\Dav01\Day01.vcxproj">
       <Project>{b73cbb9f-8252-40c0-97cf-765d80b7eb01}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\Day02\Day02.vcxproj">
+      <Project>{fe81a7f2-eb9c-4722-8dde-2ad1b1787864}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

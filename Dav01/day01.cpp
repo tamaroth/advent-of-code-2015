@@ -1,8 +1,18 @@
 #include "day01.hpp"
 
+CDay01::CDay01()
+{
+
+}
+
+CDay01::~CDay01()
+{
+
+}
+
 void CDay01::init()
 {
-	high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
+	std::cout << "Day 01!" << std::endl;
 	std::ifstream infile("data_d01.txt");
 
 	if (infile.is_open())
