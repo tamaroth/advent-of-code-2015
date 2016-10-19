@@ -24,7 +24,7 @@ Advent of Code sources
 | 19  | [Medicine for Rudolph](./Day19/main.cpp)                   |
 | 20  | [Infinite Elves and Infinite Houses](./Day20/main.cpp)     |
 | 21  | [RPG Simulator 20XX](./Day21/main.cpp)                     |
-| 22  | Wizard Simulator 20XX(./Day22/main.cpp)                    |
-| 23  | Opening the Turing Lock(./Day23/main.cpp)                  |
-| 24  | It Hangs in the Balance(./Day24/main.cpp)                  |
-| 25  | Let It Snow(./Day21/main.cpp)                              |
+| 22  | [Wizard Simulator 20XX](./Day22/main.cpp)                  |
+| 23  | [Opening the Turing Lock](./Day23/main.cpp)                |
+| 24  | [It Hangs in the Balance](./Day24/main.cpp)                |
+| 25  | [Let It Snow](./Day21/main.cpp)                            |
